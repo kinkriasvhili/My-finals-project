@@ -1,0 +1,115 @@
+/* Unified Design System */
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  background: rgba(15, 15, 35, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center; /* Center navbar items */
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  gap: 2.5rem;
+}
+
+nav ul li a {
+  color: #e0e0e0; /* Light gray text */
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+}
+
+nav ul li a:hover {
+  color: #0a192f;
+  background: rgba(255, 255, 255, 0.9); /* White background on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.4);
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background: #64ffda; /* Neon cyan accent */
+  transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+footer {
+  background: rgba(15, 15, 35, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  color: #64ffda;
+  border-top: 1px solid rgba(100, 255, 218, 0.1);
+  box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.3);
+  margin-top: auto;
+}
+
+footer p {
+  margin: 0;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.profile {
+  text-align: center;
+  margin: 4rem auto;
+  padding: 2rem;
+  background: rgba(100, 255, 218, 0.1);
+  border-radius: 16px;
+  max-width: 600px;
+  color: #64ffda;
+  border: 1px solid rgba(100, 255, 218, 0.2);
+}
+
+.error {
+  text-align: center;
+  margin: 4rem auto;
+  padding: 2rem;
+  background: rgba(255, 107, 107, 0.1);
+  border-radius: 16px;
+  max-width: 600px;
+  color: #ff6b6b;
+  border: 1px solid rgba(255, 107, 107, 0.2);
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: row; /* Ensure navbar stays in row layout */
+    gap: 1rem;
+    flex-wrap: wrap; /* Wrap items if they overflow */
+  }
+
+  footer p {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
